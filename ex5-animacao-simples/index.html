@@ -17,28 +17,37 @@
 </head>
 <body>
   <!-- Botão que inicia a animação -->
-  <button id="myButton">Mover</button>
+  <button id="leftButton">Mover Esquerda</button>
+  <button id="rightButton">Mover Direita</button>
 
   <!-- Div que será movida ao clicar no botão -->
   <div id="myDiv"></div>
 
   <!-- Script JavaScript embutido na página -->
   <script>
-    // Seleciona o botão e a div pelo ID
-    const button = document.querySelector('#myButton');
+    // Seleciona os botões e a div pelo ID
+    const leftButton = document.querySelector('#leftButton');
+    const rightButton = document.querySelector('#rightButton');
     const div = document.querySelector('#myDiv');
 
     // Variável para controlar a posição da div
+    let position = 0;
 
-    // 1ª Digitação (Aqui)
-
-    // Adiciona um evento de clique ao botão
- 
-      // Aumenta a posição em 50 pixels
-      
-
+    // Adiciona um evento de clique ao botão para mover a div para a esquerda
+    leftButton.addEventListener('click', () => {
+      // Diminui a posição em 50 pixels
+      position -= 50;
       // Move a div para a nova posição
+      div.style.left = `${position}px`;
+    });
 
+    // Adiciona um evento de clique ao botão para mover a div para a direita
+    rightButton.addEventListener('click', () => {
+      // Aumenta a posição em 50 pixels
+      position += 50;
+      // Move a div para a nova posição
+      div.style.left = `${position}px`;
+    });
   </script>
 </body>
 </html>

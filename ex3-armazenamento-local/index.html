@@ -33,17 +33,31 @@
 
     // Verifica se há uma preferência de modo salva no localStorage
 
-    // 1ª Digitação (Aqui)
-
+    const savedMode = localStorage.getItem ('mode');
+    if (savedMode === 'dark') {
       // Se o modo escuro estiver salvo, aplica a classe 'dark-mode' e atualiza o texto do botão
-
+      body.classList.add('dark-mode');
+      button.textContent = 'Modo Claro';
+    }
 
     // Adiciona um evento de clique ao botão
-    
+
+    button.addEventListener ('click', () => {
       // Alterna a classe 'dark-mode' no corpo da página
-      
+      body.classList.toggle('dark-mode');
+    
 
       // Verifica se o modo escuro está ativo e salva a preferência no localStorage
+      
+      if (body.classList.contains ('dark-mode')) {
+        localStorage.setItem('mode', 'dark');
+        button.textContent = 'Modo Claro';
+      } else {
+         localStorage.setItem('mode', 'light');
+        button.textContent = 'Modo Escuro';
+      }
+
+    });
 
       
   </script>

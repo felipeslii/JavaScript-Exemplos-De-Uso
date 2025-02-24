@@ -21,15 +21,36 @@
     // Uma API (Application Programming Interface) é uma interface que permite a comunicação entre sistemas e o compartilhamento de dados. No exemplo, a página utiliza a função fetch para enviar uma requisição assíncrona à API https://jsonplaceholder.typicode.com/todos/2, retornando informações no formato JSON. Esses dados são processados e exibidos no parágrafo da página, incluindo detalhes como userId, id, title e completed. Caso haja um erro na requisição, uma mensagem de erro é apresentada ao usuário.
 
     // Adiciona um evento de clique ao botão
-    // button.addEventListener('click', () => {
-      // Faz uma requisição assíncrona à API
-      // fetch('https://jsonplaceholder.typicode.com/todos/2')
+    button.addEventListener('click', () => {
+       // Faz uma requisição assíncrona à API
+       fetch('https://jsonplaceholder.typicode.com/comments/2')
+        
+     
 
       // Para simular erro de requisição
       // fetch('https://invalidurl.example.com')
+          // Converte a resposta em json (da API) em Json
+          .then(response => response.json())
+          .then(data => {
+            // exibe os parâmetros da resposta da API
+            text.innerHTML = `
+              Post ID: ${data.postId}<br>
+              ID: ${data.id}<br>
+              name: ${data.name}<br>
+              E-mail: ${data.email}<br>
+              Body: ${data.body}
+            `;
+          })
 
-          // 1ª Digitação (Aqui)
-
+          .catch(error => {
+            // Exibe uma mensagem e erro caso a requisição falhe
+            text.textContent = 'Erro ao bsucar dados!'
+          })
+    })
+      
+      
+       
+              
           // Exibe todos os parâmetros da resposta no parágrafo
 
           // Exibe uma mensagem de erro caso a requisição falhe
