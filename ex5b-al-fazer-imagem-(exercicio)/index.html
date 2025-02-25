@@ -56,7 +56,8 @@
   <!-- Contêiner para a imagem e o texto -->
   <div class="image-container">
     <!-- Imagem que será alterada -->
-    <img id="myImage" src="image.png" alt="Imagem 1">
+    <img id="myImage" src="image.png" alt="Imagem 1" onmouseover="trocarImagem()"
+    onmouseout="voltarImagem()">
 
     <!-- Texto principal que será modificado -->
     <p id="myText">Passe o mouse sobre a imagem</p>
@@ -67,11 +68,30 @@
 
   <!-- Script JavaScript embutido na página -->
   <script>
+    function trocarImagem() {
+      let img = document.getElementById("myImage");
+      let text = document.getElementById("myText");
+      let subText = document.getElementById("subText");
 
+      img.src = "image2.png"; // Certifique-se de que a imagem existe
+      img.alt = "Nova imagem";
 
-    // 1ª Digitação (Resolva aqui o exercício)
+      text.innerText = "Você passou o mouse!"; // Muda o texto principal
+      subText.innerText = "Doja Cat - Perfeita!"; // Muda o subtexto
+    }
 
+    function voltarImagem() {
+      let img = document.getElementById("myImage");
+      let text = document.getElementById("myText");
+      let subText = document.getElementById("subText");
 
+      img.src = "image.png"; // Volta para a imagem original
+      img.alt = "Imagem original";
+
+      text.innerText = "Passe o mouse sobre a imagem"; // Volta o texto principal
+      subText.innerText = "Sabrina Carpenter - Linda!"; // Volta o subtexto
+    }
   </script>
 </body>
+
 </html>
