@@ -3,66 +3,68 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Define o box-sizing como border-box para incluir bordas e paddings no tamanho total */
 }
 
 /* Define a fonte padrão para o corpo da página */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Define a fonte como Arial ou sans-serif */
 }
 
 /* Estilo da barra de navegação */
 nav {
-  display: flex;
+  display: flex; /* Define um layout flexível */
   justify-content: space-between; /* Alinha os itens à esquerda e à direita */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 1rem 2rem; /* Espaçamento interno */
-  background-color: #333; /* Cor de fundo */
+  align-items: center; /* Centraliza os itens verticalmente */
+  padding: 1rem 2rem; /* Define o espaçamento interno da barra de navegação */
+  background-color: #333; /* Define a cor de fundo como cinza escuro */
 }
 
 /* Estilo do ícone do menu hambúrguer */
-/* .menu-icon {
-
-  2ª Digitação (Aqui) 
-
-} */
+.menu-icon {
+  display: none; /* Esconde o ícone do menu por padrão */
+  color: white; /* Define a cor do ícone como branco */
+  font-size: 1.5rem; /* Define o tamanho da fonte do ícone */
+}
 
 /* Estilo da lista de navegação */
 .nav-list {
-  display: flex; /* Exibe os itens em linha */
+  display: flex; /* Exibe os itens da lista em linha */
   list-style: none; /* Remove os marcadores de lista */
-
-/* Move a lista para o lado direito */
-  /* margin-left: auto;  */
+  margin-left: auto; /* Move a lista para o lado direito */
 }
 
 /* Estilo dos itens da lista */
 .nav-list li {
-  margin-left: 2rem; /* Espaçamento entre os itens */
+  margin-left: 2rem; /* Adiciona espaçamento entre os itens da lista */
 }
 
 /* Estilo dos links */
 .nav-list a {
-  color: white; /* Cor do texto */
-  text-decoration: none; /* Remove o sublinhado */
-  font-size: 1rem; /* Tamanho da fonte */
+  color: white; /* Define a cor do texto como branco */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 1rem; /* Define o tamanho da fonte dos links */
 }
 
 /* Estilos para telas pequenas (max-width: 768px) */
 @media (max-width: 768px) {
-  /* .menu-icon {
-
-    3ª Digitação (Aqui)
-    
+  .menu-icon {
+    display: block; /* Exibe o ícone do menu em telas pequenas */
   }
 
   .nav-list {
-
-  } */
+    display: none; /* Esconde a lista de navegação por padrão */
+    flex-direction: column; /* Alinha os itens da lista em coluna */
+    width: 100%; /* Define a largura da lista como 100% */
+    background-color: #333; /* Define a cor de fundo da lista como cinza escuro */
+    position: absolute; /* Define a posição absoluta para a lista */
+    top: 60px; /* Define a distância do topo */
+    left: 0; /* Alinha a lista à esquerda */
+  }
 
   .nav-list li {
-    margin: 1rem 0; /* Espaçamento entre os itens */
-    text-align: center; /* Centraliza o texto */
+    margin: 1rem 0; /* Adiciona espaçamento entre os itens da lista */
+    text-align: center; /* Centraliza o texto dos itens */
   }
 
   /* Classe ativada via JavaScript para exibir a lista */
